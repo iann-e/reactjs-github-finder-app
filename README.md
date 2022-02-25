@@ -6,4 +6,6 @@ ReactJs V6
 
 Github API
 
+TailwindCSS 3.0.23 (DaisyUI)
+
 Demo: https://github-react-app-v6.netlify.app/
