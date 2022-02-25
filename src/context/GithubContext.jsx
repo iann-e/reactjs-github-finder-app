@@ -31,13 +31,17 @@ export const GithubProvider = ({children}) => {
                 Authorization: `token ${ process.env.REACT_APP_GITHUB_TOKEN }`
             }
         })
+
+        // if (res.status === 404 || res.status === 401) {
+        //     window.location = '/notfound'
+        // }else{
+            const data = await res.json();
         
-        const data = await res.json();
-    
-        dispatch({
-            type: 'GET_USERS',
-            payload: data.items
-        })
+            dispatch({
+                type: 'GET_USERS',
+                payload: data.items
+            })
+        // }
 
     }
 
@@ -54,7 +58,7 @@ export const GithubProvider = ({children}) => {
             }
         } )
 
-        if (res.status === 404) {
+        if (res.status === 404 || res.status === 401) {
             window.location = '/notfound'
         }else{
             const data = await res.json()

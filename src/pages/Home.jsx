@@ -10,7 +10,10 @@ function Home() {
   return (
     <>
         <SearchForm />
-        <UserResult />
+        <div className='min-h-400' style={{ minHeight: '400px' }}>
+          <UserResult />
+        </div>
+        
     </>
   )
 }
