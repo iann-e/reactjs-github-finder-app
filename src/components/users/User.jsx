@@ -28,7 +28,7 @@ function User() {
       <>
         <div className="hero bg-base-200 mb-10">
         <div className="flex-col hero-content lg:flex-row">
-            <img src={avatar_url} className="max-w-sm rounded-lg shadow-2xl" />
+            <img src={avatar_url} className="max-w-sm rounded-lg shadow-2xl" alt={name} />
             <div>
             <div className="flex">
             <h1 className="text-5xl font-bold">{name}</h1>

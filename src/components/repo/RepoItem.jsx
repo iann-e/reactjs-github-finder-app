@@ -3,12 +3,12 @@ import { FaLink, FaEye } from 'react-icons/fa'
 
 function RepoItem({ repo }) {
 
-    const { name, description, watchers, forks, stargazers_count } = repo
+    const { name, description, watchers, forks, stargazers_count, html_url } = repo
   return (
     <div className="card rounded-md bg-gray-800 hover:bg-gray-500 mb-2">
         <div className="card-body">
             <h3 className='mb-2 text-xl font-semibold'>
-                <a href="#"> 
+                <a href={html_url}> 
                     <FaLink className='inline mr-1'/> { name }
                 </a>
             </h3>
