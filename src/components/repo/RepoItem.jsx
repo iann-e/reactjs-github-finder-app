@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaLink, FaEye } from 'react-icons/fa'
+import { FaLink, FaEye, FaUtensils, FaStar } from 'react-icons/fa'
 
 function RepoItem({ repo }) {
 
@@ -19,10 +19,10 @@ function RepoItem({ repo }) {
                     <FaEye className='mr-2' /> {watchers}
                 </div>
                 <div className='mr-2 badge badge-info badge-lg'>
-                    <FaEye className='mr-2' /> {stargazers_count}
+                    <FaStar className='mr-2' /> {stargazers_count}
                 </div>
                 <div className='mr-2 badge badge-info badge-lg'>
-                    <FaEye className='mr-2' /> {forks}
+                    <FaUtensils className='mr-2' /> {forks}
                 </div>
             </div>
         </div>
