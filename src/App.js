@@ -10,12 +10,11 @@ import User from "./components/users/User"
 import { GithubProvider } from './context/GithubContext'
 
 
-
 function App() {
   return (
       <GithubProvider>
       <Router>
-        <div className="flex flex-col justify-between h-screen">
+        <div className="flex flex-col justify-between h-screen ">
         <Navbar />
         <div>
           <div className="mx-auto max-w-screen-lg">
