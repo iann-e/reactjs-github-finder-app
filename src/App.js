@@ -15,20 +15,22 @@ function App() {
   return (
       <GithubProvider>
       <Router>
+        <div className="flex flex-col justify-between h-screen">
         <Navbar />
-        <div className='h-full max-w-screen-lg m-auto p-2 flex flex-col justify-between gap-y-10'>
-          <div className="container h-full min-h-full">
+        <div>
+          <div className="mx-auto max-w-screen-lg">
             <Routes>
-              <Route path ="/" element={
-                  <Home />
-              } />
-              <Route path="/user/:login" element={ <User /> } />
-              <Route path="/about" element={ <About /> } />  
-              <Route path="/*" element={ <NotFound /> } />
+                <Route path ="/" element={
+                    <Home />
+                } />
+                <Route path="/user/:login" element={ <User /> } />
+                <Route path="/about" element={ <About /> } />  
+                <Route path="/*" element={ <NotFound /> } />
 
             </Routes>
           </div>
-          <Footer />
+        </div>
+        <Footer />
         </div>
       </Router>
       </GithubProvider>
