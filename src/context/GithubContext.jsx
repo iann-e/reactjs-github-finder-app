@@ -6,6 +6,8 @@ const GithubContext = createContext()
 
 export const GithubProvider = ({children}) => {
 
+   
+
     const initialState = {
         users: [],
         user: {},
@@ -19,6 +21,9 @@ export const GithubProvider = ({children}) => {
     // Get All Users based on the search params
     const searchUsers = async (text) => {
 
+
+
+
         setLoading();
 
         const params = new URLSearchParams({
@@ -26,22 +31,30 @@ export const GithubProvider = ({children}) => {
         })
         
 
-        const res = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`, {
-            headers: {
-                Authorization: `token ${ process.env.REACT_APP_GITHUB_TOKEN }`
-            }
-        })
+ 
 
-        // if (res.status === 404 || res.status === 401) {
-        //     window.location = '/notfound'
-        // }else{
-            const data = await res.json();
-        
-            dispatch({
-                type: 'GET_USERS',
-                payload: data.items
+            const res = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`, {
+                headers: {
+                    Authorization: `token ${ process.env.REACT_APP_GITHUB_TOKEN }`
+                }
             })
-        // }
+    
+            if( res.status !== 401 ) {
+                const data = await res.json();
+                
+                dispatch({
+                    type: 'GET_USERS',
+                    payload: data.items
+                })
+            }else{
+                window.location = '/limit-page'
+            }
+    
+            
+     
+          
+     
+
 
     }
 

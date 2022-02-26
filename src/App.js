@@ -6,8 +6,9 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import User from "./components/users/User"
-
+import LimitPage from "./pages/LimitPage"; 
 import { GithubProvider } from './context/GithubContext'
+
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
                     <Home />
                 } />
                 <Route path="/user/:login" element={ <User /> } />
-                <Route path="/about" element={ <About /> } />  
+                <Route path="/about" element={ <About /> } />
+                <Route path="/limit-page" element={<LimitPage /> } />  
                 <Route path="/*" element={ <NotFound /> } />
-
             </Routes>
           </div>
         </div>
